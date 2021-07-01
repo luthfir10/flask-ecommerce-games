@@ -1,0 +1,20 @@
+{% extends "./members/home.html" %}
+{% block layoutUserSidenav_content%}
+<main>
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">Login</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="{{url_for('rmember.homeuser')}}">Home</a></li>
+            <li class="breadcrumb-item active">Login</li>
+        </ol>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+    </div>
+</main>
+{% endblock%}

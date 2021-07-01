@@ -1,0 +1,67 @@
+{% extends "./members/home.html" %}
+{% block layoutUserSidenav_content%}
+<main>
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">Register</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="{{url_for('rmember.homeuser')}}">Home</a></li>
+            <li class="breadcrumb-item active">Register</li>
+        </ol>
+        <form method="POST">
+            
+            <div class="mb-3">
+                {{form.nopengenal.label(for="nopengenal",class="form-label")}}
+                {% if form.nopengenal.errors %}
+                {{form.nopengenal(class="form-control is-invalid",id="nopengenal")}}
+                <div class="invalid-feedback">
+                    {% for error in form.nopengenal.errors %}
+                    <span>{{error}}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{form.nopengenal(class="form-control",id="nopengenal")}}
+                {% endif %}
+            </div>
+            <div class="mb-3">
+                {{form.nama.label(for="nama",class="form-label")}}
+                {{form.nama(class="form-control",id="nama")}}
+            </div>
+            <div class="mb-3">
+                {{form.alamat.label(for="alamat",class="form-label")}}
+                {{form.alamat(class="form-control",id="alamat")}}
+            </div>
+            <div class="mb-3">
+                {{form.email.label(for="email",class="form-label")}}
+                {{form.email(type="email",class="form-control",id="email")}}
+            </div>
+            <div class="mb-3">
+                {{form.password.label(for="password",class="form-label")}}
+                {% if form.password.errors %}
+                {{form.password(class="form-control is-invalid",id="password")}}
+                <div class="invalid-feedback">
+                    {% for error in form.password.errors %}
+                    <span>{{error}}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{form.password(class="form-control",id="password")}}
+                {% endif %}
+            </div>
+            <div class="mb-3">
+                {{form.pas_konfi.label(for="pas_konfi",class="form-label")}}
+                {% if form.pas_konfi.errors %}
+                {{form.pas_konfi(class="form-control is-invalid",id="pas_konfi")}}
+                <div class="invalid-feedback">
+                    {% for error in form.pas_konfi.errors %}
+                    <span>{{error}}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{form.pas_konfi(class="form-control",id="pas_konfi")}}
+                {% endif %}
+            </div>
+            {{form.submit(class="btn btn-primary")}}
+        </form>
+    </div>
+</main>
+{% endblock%}
